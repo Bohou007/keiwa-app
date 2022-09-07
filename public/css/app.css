@@ -1,1 +1,102 @@
+.bg-gradient-logo {
+    background-image: linear-gradient(310deg, #165542, #175B46)
+}
 
+.bg-logo-soft {
+    background: #FFC000 !important;
+    color: #FFFFFF !important;
+}
+
+.bg-logo-soft-1 {
+    background: #115540 !important;
+    color: #FFFFFF !important;
+}
+
+.m-left {
+    margin-left: 19px !important;
+}
+
+.text-color {
+    color: #a8b8d8 !important;
+}
+
+.navbar-vertical .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+#sidenav-main {
+    background: #115540 !important;
+}
+
+.text-color-fff {
+    color: #fff !important;
+}
+
+.navbar-vertical .navbar-nav>.nav-item .nav-link.active {
+    color: #344767 !important;
+    background-color: #fff;
+}
+
+.bg-logo-nav {
+    background-color: #FFC000 !important;
+    color: #fff !important;
+}
+
+.navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {
+    background-image: linear-gradient(310deg, #ffc000, #ffc000);
+}
+
+.navbar-vertical .navbar-brand-img,
+.navbar-vertical .navbar-brand>img {
+    max-height: 50px !important;
+}
+
+.img-height {
+    height: 201px !important;
+}
+
+.block-h {
+    background-color: #fff !important;
+    padding-top: 40px !important;
+}
+
+.success-h1 {
+    color: #88B04B;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.success-p {
+    color: #404F5E;
+    font-size: 20px;
+    margin: 0;
+}
+
+.success-i {
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left: -15px;
+}
+
+.success-card {
+    background: white;
+    padding: 60px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.page-item.active .page-link {
+    color: #fff !important;
+    background-color: #115540 !important;
+    border-color: #115540 !important;
+}
+
+.text-secondary-logo {
+    color: rgba(255, 255, 255, 0.867) !important;
+}
+
+.dropdown-menu.dropdown-menu-end.px-2.py-3.me-sm-n4.show {
+    background-color: #fff !important;
+}

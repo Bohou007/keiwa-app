@@ -17,32 +17,37 @@
                             <div>
                                 <label for="email">Email</label>
                                 <div class="">
-                                    <input id="email" name="email" type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Email"
+                                        aria-label="Email" aria-describedby="email-addon">
                                     @error('email')
-                                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div>
                                 <label for="password">New Password</label>
                                 <div class="">
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                                    <input id="password" name="password" type="password" class="form-control"
+                                        placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                                     @error('password')
-                                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div>
                                 <label for="password_confirmation">Confirm Password</label>
                                 <div class="">
-                                    <input id="password-confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Password-confirmation" aria-label="Password-confirmation" aria-describedby="Password-addon">
+                                    <input id="password-confirmation" name="password_confirmation" type="password"
+                                        class="form-control" placeholder="Password-confirmation"
+                                        aria-label="Password-confirmation" aria-describedby="Password-addon">
                                     @error('password')
-                                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                    <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Recover your password</button>
+                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Recover your
+                                    password</button>
                             </div>
                         </form>
                     </div>
@@ -50,7 +55,8 @@
             </div>
             <div class="col-md-6">
                 <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                    <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+                    <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
+                        style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
                 </div>
             </div>
         </div>

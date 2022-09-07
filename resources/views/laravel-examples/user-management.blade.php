@@ -3,14 +3,7 @@
 @section('content')
 
 <div>
-    <div class="alert alert-secondary mx-4" role="alert">
-        <span class="text-white">
-            <strong>Add, Edit, Delete features are not functional!</strong> This is a
-            <strong>PRO</strong> feature! Click <strong>
-            <a href="https://www.creative-tim.com/live/soft-ui-dashboard-pro-laravel" target="_blank" class="text-white">here</a></strong>
-            to see the PRO product!
-        </span>
-    </div>
+
 
     <div class="row">
         <div class="col-12">
@@ -18,9 +11,78 @@
                 <div class="card-header pb-0">
                     <div class="d-flex flex-row justify-content-between">
                         <div>
-                            <h5 class="mb-0">All Users</h5>
+                            <h5 class="mb-0">Listes des utilisateurs</h5>
                         </div>
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
+                        <button class="btn bg-logo-soft btn-sm mb-0" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modal-form">+&nbsp; Nouvel utilisateur</button>
+
+                        {{-- Modal --}}
+                        <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body p-0">
+                                        <div class="card card-plain">
+                                            <div class="card-header pb-0 text-left">
+                                                <h3 class="font-weight-bolder text-dark text-gradient">Nouvel
+                                                    utilisateur</h3>
+                                                <p class="mb-0">Enter your email and password to sign in</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <form role="form" method="POST" action="{{ route('register-admin') }}"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+                                                    <label>Nom Complet</label>
+                                                    <div class="mb-3">
+                                                        <input type="text" name="name" required class="form-control"
+                                                            placeholder="Name" aria-label="Name">
+                                                    </div>
+                                                    <label>Email</label>
+                                                    <div class="mb-3">
+                                                        <input type="email" name="email" required class="form-control"
+                                                            placeholder="Email" aria-label="Email">
+                                                    </div>
+                                                    <label>Numéro de téléphone</label>
+                                                    <div class="mb-3">
+                                                        <input type="text" required name="phone" class="form-control"
+                                                            placeholder="Numéro de téléphone"
+                                                            aria-label="Numéro de téléphone">
+                                                    </div>
+                                                    <label>Mot de passe </label>
+                                                    <div class="mb-3">
+                                                        <input type="password" name="password" required
+                                                            class="form-control" placeholder="Password"
+                                                            aria-label="Password">
+                                                    </div>
+
+                                                    <div class="form-check form-check-info text-left">
+                                                        <input class="form-check-input" type="checkbox" name="agreement"
+                                                            id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            I agree the <a href="javascript:;"
+                                                                class="text-dark font-weight-bolder">Terms and
+                                                                Conditions</a>
+                                                        </label>
+                                                        @error('agreement')
+                                                        <p class="text-danger text-xs mt-2">First, agree to the Terms
+                                                            and Conditions, then try register again.</p>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <button type="submit"
+                                                            class="btn bg-logo-soft w-100 mt-4 mb-0">Enregistrer
+                                                            l'utilisateur
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -31,177 +93,65 @@
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         ID
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Photo
+
+                                    <th
+                                        class="text-centers text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Nom complet
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Name
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th
+                                        class="text-centers text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Email
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        role
+                                    <th
+                                        class="text-centers text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Numéro de téléphone
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Creation Date
+                                    <th
+                                        class="text-centers text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Date de création
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    {{-- <th
+                                        class="text-centers text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Action
-                                    </th>
+                                    </th> --}}
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse ($users->reverse() as $key=> $user)
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $key+1 }}</p>
                                     </td>
-                                    <td>
-                                        <div>
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
-                                        </div>
+
+                                    <td class="text-centers">
+                                        <p class="text-xs font-weight-bold mb-0">{{ $user->name }}</p>
                                     </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
+                                    <td class="text-centers">
+                                        <p class="text-xs font-weight-bold mb-0">{{ $user->email }}</p>
                                     </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">admin@softui.com</p>
+                                    <td class="text-centers">
+                                        <p class="text-xs font-weight-bold mb-0">{{ $user->phone }}</p>
                                     </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
+                                    <td class="text-centers">
+                                        <span
+                                            class="text-secondary text-xs font-weight-bold">{{$user->created_at->format('j
+                                            F, Y')}}</span>
                                     </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
-                                    </td>
-                                    <td class="text-center">
+                                    {{-- <td class="text-centers">
                                         <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
                                         <span>
                                             <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                         </span>
-                                    </td>
-                                </tr>
+                                    </td> --}}
+                                    </tr>
+                                @empty
                                 <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">2</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-1.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">creator@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">05/05/20</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
+                                    NO data
                                 </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">3</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-3.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">member@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">23/06/20</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">4</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/team-4.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Peterson</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">peterson@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Member</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">26/10/17</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">5</p>
-                                    </td>
-                                    <td>
-                                        <div>
-                                            <img src="/assets/img/marie.jpg" class="avatar avatar-sm me-3">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Marie</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">marie@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Creator</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">23/01/21</span>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary"></i>
-                                        </span>
-                                    </td>
-                                </tr>
+                                @endforelse
+
                             </tbody>
                         </table>
                     </div>
@@ -210,5 +160,5 @@
         </div>
     </div>
 </div>
- 
+
 @endsection

@@ -8,6 +8,11 @@ class HomeController extends Controller
 {
     public function home()
     {
-        return redirect('dashboard');
+        return redirect('forms-listes');
+    }
+
+    public function form()
+    {
+        return redirect('form');
     }
 }
