@@ -8,6 +8,6 @@ class CheckHealthController extends Controller
 {
     public function index()
     {
-        return 'Check Health of Keiwa formulaire';
+        return "Okay";
     }
 }
