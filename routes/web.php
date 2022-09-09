@@ -1,5 +1,6 @@
 <?php
 
+use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\CheckHealthController;
@@ -43,8 +44,6 @@ Route::get('/', function () {
 })->name('form');
 
 
-Route::get('/health', [CheckHealthController::class, 'index'])->name('health');
-
 Route::get('/success', function () {
     return view('succes');
 })->name('succes');
@@ -52,3 +51,5 @@ Route::get('/success', function () {
 Route::get('/admin/wps-keiwa-pass-login', function () {
     return view('session/login');
 })->name('login');
+
+Route::get('/health', HealthCheckResultsController::class);

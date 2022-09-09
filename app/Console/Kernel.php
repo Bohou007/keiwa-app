@@ -2,8 +2,14 @@
 
 namespace App\Console;
 
+
+use App\Console\Commands\PublishScheduledPostsCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\Health\Commands\RunHealthChecksCommand;
+use Spatie\SiteSearch\Commands\CrawlCommand;
+use \Spatie\Health\Commands\ScheduleCheckHeartbeatCommand;
+
 
 class Kernel extends ConsoleKernel
 {
@@ -24,7 +30,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command(RunHealthChecksCommand::class)->everyMinute();
+        $schedule->command(ScheduleCheckHeartbeatCommand::class)->everyMinute();
+
+        // $schedule->command('schedule-monitor:clean')->daily();
+        $schedule->command('responsecache:clear')->daily();
+        $schedule->command(CrawlCommand::class)->everyThreeHours();
     }
 
     /**
@@ -34,7 +45,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
