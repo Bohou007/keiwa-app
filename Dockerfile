@@ -64,5 +64,6 @@ RUN php artisan config:cache && \
 
 RUN composer dump-autoload -o
 
-CMD php artisan serve --host=0.0.0.0 --port=8080
+# CMD php artisan serve --host=0.0.0.0 --port=8080
+CMD ["php","artisan","serve", "--host=0.0.0.0", "--port=8080"]
 EXPOSE 8080
