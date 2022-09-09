@@ -52,10 +52,11 @@
 FROM php:8.0.5
 FROM composer:2.4.1
 
-RUN docker-php-ext-install pdo pdo_mysql sockets
+RUN docker-php-ext-install pdo pdo_mysql
 WORKDIR /app
 COPY ["composer.json", "composer.lock*", "./"]
-COPY . /app
+COPY . .
+RUN php --ini
 RUN composer install --ignore-platform-req=ext-gd
 
 RUN php artisan config:cache && \
