@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\CheckHealthController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
@@ -40,6 +41,9 @@ Route::resource('/forms', FormsController::class);
 Route::get('/', function () {
     return view('form');
 })->name('form');
+
+
+Route::get('/health', [CheckHealthController::class, 'index'])->name('health');
 
 Route::get('/success', function () {
     return view('succes');
