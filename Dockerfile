@@ -28,6 +28,7 @@
 
 
 FROM php:8.2.0RC1-cli-bullseye
+FROM composer:2.4.1
 
 ENV APP_ENV=production
 
