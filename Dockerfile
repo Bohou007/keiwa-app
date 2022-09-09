@@ -27,16 +27,35 @@
 # CMD ["php","artisan","serve", "--port=9080"]
 
 
-FROM php:8.2.0RC1-cli-bullseye
-FROM composer:2.4.1
+# FROM php:8.2.0RC1-cli-bullseye
+# FROM composer:2.4.1
 
-ENV APP_ENV=production
+# ENV APP_ENV=production
 
+# WORKDIR /app
+
+# COPY ["composer.json", "composer.lock*", "./"]
+
+# COPY . .
+# RUN php --ini
+
+# RUN composer install --ignore-platform-req=ext-gd
+
+# RUN php artisan config:cache && \
+#     php artisan route:cache && \
+#     php artisan optimize
+
+# RUN composer dump-autoload -o
+
+# CMD ["php","artisan","serve"]
+
+FROM php:8.0.5
+RUN apt-get update -y && apt-get install -y openssl zip unzip git
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN docker-php-ext-install pdo mbstring
 WORKDIR /app
-
-COPY ["composer.json", "composer.lock*", "./"]
-
-RUN composer install --ignore-platform-req=ext-gd
+COPY . /app
+RUN composer install
 
 RUN php artisan config:cache && \
     php artisan route:cache && \
@@ -44,5 +63,5 @@ RUN php artisan config:cache && \
 
 RUN composer dump-autoload -o
 
-COPY . .
-CMD ["php","artisan","serve"]
+CMD php artisan serve --host=0.0.0.0 --port=8080
+EXPOSE 8080
