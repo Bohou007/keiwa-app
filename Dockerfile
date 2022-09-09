@@ -50,13 +50,13 @@
 # CMD ["php","artisan","serve"]
 
 FROM php:8.0.5
-# RUN apt-get update -y && apt-get install -y openssl zip unzip git
 FROM composer:2.4.1
 
-RUN docker-php-ext-install pdo mbstring
+RUN docker-php-ext-install pdo pdo_mysql sockets
 WORKDIR /app
+COPY ["composer.json", "composer.lock*", "./"]
 COPY . /app
-RUN composer install
+RUN composer install --ignore-platform-req=ext-gd
 
 RUN php artisan config:cache && \
     php artisan route:cache && \
