@@ -57,7 +57,7 @@ WORKDIR /app
 COPY ["composer.json", "composer.lock*", "./"]
 COPY . .
 RUN php --ini
-RUN composer install --ignore-platform-req=ext-gd
+RUN composer install
 
 RUN php artisan config:cache && \
     php artisan route:cache && \
