@@ -49,10 +49,10 @@
 
 # CMD ["php","artisan","serve"]
 
-FROM php:8.2.0RC1-cli-bullseye
+FROM php:8.0.5
 FROM composer:2.4.1
 
-# RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql
 WORKDIR /app
 COPY ["composer.json", "composer.lock*", "./"]
 COPY . .
