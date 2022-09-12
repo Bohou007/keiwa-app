@@ -1,6 +1,5 @@
 <?php
 
-use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\CheckHealthController;
