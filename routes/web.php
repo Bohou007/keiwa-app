@@ -51,5 +51,3 @@ Route::get('/success', function () {
 Route::get('/admin/wps-keiwa-pass-login', function () {
     return view('session/login');
 })->name('login');
-
-Route::get('/health', HealthCheckResultsController::class);
