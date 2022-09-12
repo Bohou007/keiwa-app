@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Api\HealthCheckController;
 use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\CheckHealthController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
@@ -36,12 +36,13 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/register', [RegisterController::class, 'store']);
 });
 
+Route::get('health', [HealthCheckController::class, 'index']);
+
 Route::resource('/forms', FormsController::class);
 
 Route::get('/', function () {
     return view('form');
 })->name('form');
-
 
 Route::get('/success', function () {
     return view('succes');
