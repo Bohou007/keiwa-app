@@ -35,6 +35,6 @@ class MailNewForm extends Mailable
      */
     public function build()
     {
-        return $this->from('noreplay@agillycloud.com')->subject('Mail from ItSolutionStuff.com')->view('email.index');
+        return $this->from('noreplay@agillycloud.com')->subject('Nouvelle demande')->view('email.index');
     }
 }
