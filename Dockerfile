@@ -59,7 +59,7 @@ COPY . .
 RUN php --ini
 RUN composer install --ignore-platform-req=ext-gd
 
-RUN php artisan key:generate && \ php artisan config:cache && \
+RUN php artisan config:cache && \
     php artisan route:cache && \
     php artisan optimize
 
