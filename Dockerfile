@@ -64,6 +64,7 @@ RUN php artisan config:cache && \
     php artisan optimize
 
 RUN composer dump-autoload -o
+RUN php artisan key:generate
 
 # CMD php artisan serve --host=0.0.0.0 --port=8080
 CMD ["php","artisan","serve", "--host=0.0.0.0", "--port=8080"]
