@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.11.0rc2-bullseye
 FROM php:8.0.5
 FROM composer:2.4.1
 
