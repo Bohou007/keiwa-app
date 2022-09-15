@@ -3,8 +3,9 @@ FROM php:8.0.5
 FROM composer:2.4.1
 
 # RUN pip install libpq-dev==9.4.3
-RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
+
 
 WORKDIR /app
 COPY ["composer.json", "composer.lock*", "./"]
