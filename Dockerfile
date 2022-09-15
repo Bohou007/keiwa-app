@@ -1,7 +1,5 @@
-FROM vanio/php-postgres:latest
-FROM gjuniioor/php-pdo-composer:latest
-FROM mchauvel/php-pdo-mysql:latest
-FROM ronaldmiranda/php-pdo:latest
+FROM vanio/php-postgres:7.3
+FROM mchauvel/php-pdo-mysql:7.1-apache
 FROM php:8.0.5
 FROM composer:2.4.1
 
