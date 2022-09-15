@@ -13,8 +13,8 @@ WORKDIR /app
 FROM base as local
 
 RUN apk add --no-cache --update \
-    libpq-dev==9.4.3 \
-    RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
+    libpq-dev==9.4.3
+RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
 
 
