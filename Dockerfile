@@ -4,7 +4,7 @@ FROM composer:2.4.1
 
 RUN apt-get update
 
-RUN apt-get install -y libpq-dev \
+RUN apt-get install -y libpq-dev --no-install-recommends \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
