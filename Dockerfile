@@ -4,7 +4,7 @@ FROM composer:2.4.1 as composer
 
 RUN apt-get update
 # Install Postgre PDO
-RUN apt-get install -y libpq-dev=9.0.0 \
+RUN apt-get install -y libpq-dev=9.0.0 --no-install-recommends \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
