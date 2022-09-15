@@ -2,10 +2,9 @@ FROM ubuntu:20.04
 FROM php:8.0.5
 FROM composer:2.4.1 as composer
 
-RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+RUN apt-get update
 # Install Postgre PDO
-RUN apt-get install -y --no-install-recommend libpq-dev=9.0.0 \
+RUN apt-get install -y libpq-dev=9.0.0 \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
