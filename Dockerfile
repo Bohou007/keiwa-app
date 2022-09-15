@@ -1,11 +1,7 @@
-FROM ubuntu:20.04
 FROM php:8.0.5
-FROM composer:2.4.1 as composer
+FROM composer:2.4.1
 
-# RUN apt-get update
-# Install Postgre PDO
-RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo pdo_pgsql pgsql
+# RUN apt-get updat
 
 WORKDIR /app
 
