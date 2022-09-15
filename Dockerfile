@@ -1,11 +1,12 @@
+FROM ubuntu:20.04
 FROM php:8.0.5
 FROM composer:2.4.1
 
-RUN set -ex \
-    && apk --no-cache add \
-    postgresql-dev
+RUN apt-get update
 
-RUN docker-php-ext-install pdo pdo_pgsql
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
 
 WORKDIR /app
 COPY ["composer.json", "composer.lock*", "./"]
