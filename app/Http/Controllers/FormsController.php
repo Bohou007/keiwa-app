@@ -20,7 +20,7 @@ class FormsController extends Controller
      */
     public function index()
     {
-        $forms = Forms::paginate(10);
+        $forms = Forms::orderBy('created_at', 'desc')->simplePaginate(10);
         return view('form', compact('forms'));
     }
 
