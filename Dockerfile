@@ -4,12 +4,12 @@ ENTRYPOINT ["mysql"]
 FROM php:8.0.5
 FROM composer:2.4.1
 
-RUN apk add --no-cache php-pgsql
+RUN apk add --no-cache php-pgsql=8
 # RUN sudo systemctl restart apache2
 
 RUN set -ex \
     && apk --no-cache add \
-    postgresql-dev
+    postgresql-server-dev-all
 
 RUN docker-php-ext-install pdo pdo_pgsql
 
