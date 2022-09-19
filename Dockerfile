@@ -4,7 +4,7 @@ ENTRYPOINT ["mysql"]
 FROM php:8.0.5
 FROM composer:2.4.1
 
-RUN apk add --no-cache php-pgsql=8
+# RUN apk add --no-cache php-pgsql=8
 # RUN sudo systemctl restart apache2
 
 RUN set -ex \
