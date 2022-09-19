@@ -1,5 +1,5 @@
 FROM alpine:edge
-RUN apk add --no-cache mysql-client
+# RUN apk add --no-cache mysql-client
 ENTRYPOINT ["mysql"]
 FROM php:8.0.5
 FROM composer:2.4.1
