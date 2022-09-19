@@ -7,9 +7,9 @@ FROM composer:2.4.1
 # RUN apk add --no-cache php-pgsql=8
 # RUN sudo systemctl restart apache2
 
-RUN set -ex \
-    && apk --no-cache add \
-    postgresql-server-dev=9.5
+# RUN set -ex \
+#     && apk --no-cache add \
+#     postgresql-server-dev=9.5
 
 RUN docker-php-ext-install pdo pdo_pgsql
 
