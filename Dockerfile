@@ -9,7 +9,7 @@ RUN apk add --no-cache php-pgsql=8
 
 RUN set -ex \
     && apk --no-cache add \
-    postgresql-server-dev-all
+    postgresql-server-dev=9.5
 
 RUN docker-php-ext-install pdo pdo_pgsql
 
