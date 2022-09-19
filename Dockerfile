@@ -1,9 +1,17 @@
-FROM vanio/php-postgres:7.3
-FROM mchauvel/php-pdo-mysql:7.1-apache
+FROM alpine:edge
+RUN apk add --no-cache mysql-client
+ENTRYPOINT ["mysql"]
 FROM php:8.0.5
 FROM composer:2.4.1
 
-# RUN apt-get updat
+RUN apk add --no-cache php-pgsql
+# RUN sudo systemctl restart apache2
+
+RUN set -ex \
+    && apk --no-cache add \
+    postgresql-dev
+
+RUN docker-php-ext-install pdo pdo_pgsql
 
 WORKDIR /app
 

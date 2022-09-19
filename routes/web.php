@@ -46,7 +46,7 @@ Route::get('/', function () {
 
 Route::get('/success', function () {
     return view('succes');
-})->name('succes');
+})->name('succesPage');
 
 Route::get('/admin/wps-keiwa-pass-login', function () {
     return view('session/login');

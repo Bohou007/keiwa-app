@@ -65,10 +65,14 @@ class FormsController extends Controller
 
             $users = User::all();
 
-            foreach ($users as $user) {
-                Mail::to($user->email)->send(new MailNewForm($form));
+            if ($users->length > 0) {
+                foreach ($users as $user) {
+                    Mail::to($user->email)->send(new MailNewForm($form));
+                }
             }
-            return redirect()->route('succes');
+
+
+            return redirect()->route('succesPage');
         } catch (\Throwable $th) {
             dump($th);
         }
