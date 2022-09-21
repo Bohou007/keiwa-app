@@ -58,18 +58,18 @@
 FROM ubuntu:22.04
 FROM composer:2.4.1
 
-RUN apt update
-RUN apt upgrade -y
-RUN apt install -y php8.1
-RUN apt install -y php8.1-
-RUN apt install php8.1-mbstring
-RUN apt install php8.1-xml
-RUN apt install php8.1-curl
-RUN apt install php8.1-common
-RUN apt install php8.1-pgsql
-RUN apt install php8.1-cli
-RUN apt install -y libpq-dev
-RUN apt clean
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y php8.1
+RUN apt-get install -y php8.1-
+RUN apt-get install php8.1-mbstring
+RUN apt-get install php8.1-xml
+RUN apt-get install php8.1-curl
+RUN apt-get install php8.1-common
+RUN apt-get install php8.1-pgsql
+RUN apt-get install php8.1-cli
+RUN apt-get install -y libpq-dev
+RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/\*
 
 WORKDIR /app
