@@ -60,15 +60,14 @@ FROM composer:2.4.1
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y php8.1
-RUN apt-get install -y php8.1-
-RUN apt-get install php8.1-mbstring
-RUN apt-get install php8.1-xml
-RUN apt-get install php8.1-curl
-RUN apt-get install php8.1-common
-RUN apt-get install php8.1-pgsql
-RUN apt-get install php8.1-cli
-RUN apt-get install -y libpq-dev
+RUN apt-get install -y php8.1 --no-install-recommends
+RUN apt-get install php8.1-mbstring --no-install-recommends
+RUN apt-get install php8.1-xml --no-install-recommends
+RUN apt-get install php8.1-curl --no-install-recommends
+RUN apt-get install php8.1-common --no-install-recommends
+RUN apt-get install php8.1-pgsql --no-install-recommends
+RUN apt-get install php8.1-cli --no-install-recommends
+RUN apt-get install -y libpq-dev --no-install-recommends
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/\*
 
