@@ -33,8 +33,8 @@
                                 </div>
                             </div>
 
-                            <form class="multisteps-form__form" action="{{ route('forms.store') }}" method="POST"
-                                style="height: 377px;" enctype="multipart/form-data">
+                            <form class="multisteps-form__form" action="/forms" method="POST" style="height: 377px;"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="multisteps-form__panel p-3 border-radius-xl bg-whited js-active"
                                     data-animation="FadeIn">
