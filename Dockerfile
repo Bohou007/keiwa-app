@@ -1,7 +1,9 @@
 FROM alpine:edge
 FROM drewviles/php-pdo:8.0.18-fpm
-FROM php:8.0.5
+# FROM php:8.0.5
 FROM composer:2.4.1
+FROM dopanel/php-postgres-oracle-redis:8.1
+FROM elbidouilleur/php-postgresql:php-8.1
 
 # RUN apk add --no-cache php-pgsql=8
 # RUN sudo systemctl restart apache2
