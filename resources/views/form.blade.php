@@ -44,11 +44,12 @@
                                             <div class="col-12 col-sm-12 mt-4 mt-sm-0 text-start">
                                                 <label>Nom complet</label>
                                                 <input class="multisteps-form__input form-control mb-3" required
-                                                    name="name" type="text" placeholder="Ex. Michael"
+                                                    name="name" type="text" placeholder="Entrez votre nom complet"
                                                     onfocus="focused(this)" onfocusout="defocused(this)">
                                                 <label>Numéro de téléphone whatsApp</label>
                                                 <input class="multisteps-form__input form-control mb-3" required
-                                                    name="whatsApp" type="text" placeholder="Ex. 0700000000"
+                                                    name="whatsApp" type="text"
+                                                    placeholder="Entrer votre numéro de téléphone"
                                                     onfocus="focused(this)" onfocusout="defocused(this)">
                                                 <label> Adresse Email</label>
                                                 <input class="multisteps-form__input form-control" required name="email"
@@ -74,14 +75,15 @@
                                             <div class="col-12 col-md-6 ms-auto mt-3 text-start">
                                                 <label>Nom de l'entreprise (Raison sociale) *</label>
                                                 <input class="multisteps-form__input form-control" name="raison_sociale"
-                                                    type="text" placeholder="Entrer le nom de votre entreprise'"
+                                                    type="text" placeholder="Entrer le nom de votre entreprise"
                                                     onfocus="focused(this)" onfocusout="defocused(this)">
                                             </div>
                                             <div class="col-12 col-md-6 ms-auto mt-3 text-start">
                                                 <label>Situation géographique *</label>
                                                 <input class="multisteps-form__input form-control" name="situation_geo"
-                                                    type="text" placeholder="Ex. h" onfocus="focused(this)"
-                                                    onfocusout="defocused(this)">
+                                                    type="text"
+                                                    placeholder="Entrer la situation géographique de votre entreprise"
+                                                    onfocus="focused(this)" onfocusout="defocused(this)">
                                             </div>
                                             <div class="col-12 col-md-6 ms-auto mt-3 text-start">
                                                 <label>Activité *</label>
