@@ -1,5 +1,5 @@
 FROM alpine:edge
-FROM erickp/php-pdo:latest
+FROM drewviles/php-pdo:8.0.18-fpm
 FROM php:8.0.5
 FROM composer:2.4.1
 
