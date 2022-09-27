@@ -19,7 +19,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<![endif]-->
     <title></title>
-
     <style type="text/css">
         @media only screen and (min-width: 620px) {
             .u-row {
@@ -143,14 +142,13 @@
             }
         }
     </style>
-
-
-
     <!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet"
         type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet"
         type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<![endif]-->
 
 </head>
@@ -256,28 +254,9 @@
 
                                                             <h1 class="v-line-height v-font-size"
                                                                 style="margin: 0px; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Open Sans',sans-serif; font-size: 30px;">
-                                                                <div><strong>UPGRADE YOUR PLAN</strong></div>
+                                                                <div><strong>Nouvelle Demande de service : Assistance en
+                                                                        gestion</strong></div>
                                                             </h1>
-
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <table style="font-family:'Montserrat',sans-serif;" role="presentation"
-                                                cellpadding="0" cellspacing="0" width="100%" border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Montserrat',sans-serif;"
-                                                            align="left">
-
-                                                            <div class="v-line-height"
-                                                                style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%;"><span
-                                                                        style="font-size: 18px; line-height: 25.2px;">Enjoy
-                                                                        15 Days Free Trail!</span></p>
-                                                            </div>
 
                                                         </td>
                                                     </tr>
@@ -295,18 +274,31 @@
 
                                                             <div class="v-line-height"
                                                                 style="line-height: 160%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 170%;">Lorem
-                                                                    ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor in cididunt ut labore et
-                                                                    dolore magna aliqua. Risus com modo___ viverra
-                                                                    maecenas aliquant.</p>
+                                                                <p style="font-size: 14px; line-height: 170%;">Chers
+                                                                    administrateur, <b>{{ $form->name }}</b> vient de
+                                                                    vous
+                                                                    envoyer
+                                                                    une demande d'assistances en gestion.</p>
+                                                            </div>
+                                                            <div class="v-line-height"
+                                                                style="line-height: 160%; word-wrap: break-word;">
+
+                                                                <ul style="font-size: 14px; line-height: 170%;">
+                                                                    <li><b>Raison Sociale</b>: {{ $form->raison_sociale
+                                                                        }}</li>
+                                                                    <li><b>Situation géagraphique</b>: {{
+                                                                        $form->situation_geo}}</li>
+                                                                    <li><b>Email</b>: {{ $form->email }}</li>
+                                                                    <li><b>Effectué le</b>
+                                                                        {{$form->created_at->format('j
+                                                                        F, Y')}} </li>
+                                                                </ul>
                                                             </div>
 
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-
                                             <table id="u_content_button_1" style="font-family:'Montserrat',sans-serif;"
                                                 role="presentation" cellpadding="0" cellspacing="0" width="100%"
                                                 border="0">
@@ -318,15 +310,16 @@
 
                                                             <div align="center">
                                                                 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:'Montserrat',sans-serif;"><tr><td style="font-family:'Montserrat',sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.unlayer.com" style="height:37px; v-text-anchor:middle; width:203px;" arcsize="67.5%" stroke="f" fillcolor="#da5345"><w:anchorlock/><center style="color:#FFFFFF;font-family:'Montserrat',sans-serif;"><![endif]-->
-                                                                <a href="https://www.unlayer.com" target="_blank"
-                                                                    class="v-size-width"
+                                                                <a href="https://code-engine-toolchain-keiwa-20220907151254595.s3kdfbq8n9r.eu-gb.codeengine.appdomain.cloud/listes-des-demandes"
+                                                                    target="_blank" class="v-size-width"
                                                                     style="box-sizing: border-box;display: inline-block;font-family:'Montserrat',sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #da5345; border-radius: 25px;-webkit-border-radius: 25px; -moz-border-radius: 25px; width:35%; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                                                                     <span class="v-line-height"
                                                                         style="display:block;padding:10px 20px;line-height:120%;">
                                                                         <p style="font-size: 14px; line-height: 120%;">
                                                                             <span
-                                                                                style="font-size: 14px; line-height: 16.8px;">Upgrade
-                                                                                Now</span>
+                                                                                style="font-size: 14px; line-height: 16.8px;">Suivre
+                                                                                la demande
+                                                                            </span>
                                                                         </p>
                                                                     </span>
                                                                 </a>
@@ -337,61 +330,6 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-
-                                            <table id="u_content_text_3" style="font-family:'Montserrat',sans-serif;"
-                                                role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:0px 60px 20px;font-family:'Montserrat',sans-serif;"
-                                                            align="left">
-
-                                                            <div class="v-line-height"
-                                                                style="line-height: 140%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%;"><span
-                                                                        style="font-size: 18px; line-height: 25.2px; font-family: 'Open Sans', sans-serif;"><strong>Have
-                                                                            you any questions or need any help regarding
-                                                                            this upgrade?</strong></span></p>
-                                                            </div>
-
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <table id="u_content_text_2" style="font-family:'Montserrat',sans-serif;"
-                                                role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:0px 50px 80px;font-family:'Montserrat',sans-serif;"
-                                                            align="left">
-
-                                                            <div class="v-line-height"
-                                                                style="line-height: 160%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 160%;">Lorem
-                                                                    ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore</p>
-                                                                <p style="font-size: 14px; line-height: 160%;"> </p>
-                                                                <p style="font-size: 14px; line-height: 160%;"><span
-                                                                        style="font-size: 18px; line-height: 28.8px;"><strong>Or</strong></span>
-                                                                </p>
-                                                                <p style="font-size: 14px; line-height: 160%;"> </p>
-                                                                <p style="font-size: 14px; line-height: 160%;"><span
-                                                                        style="font-size: 14px; line-height: 22.4px;">Lorem
-                                                                        ipsum dolor sit amet, consectetur adipiscing
-                                                                        elit, sed do eiusmod tempor incididunt ut
-                                                                        labore</span></p>
-                                                            </div>
-
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <!--[if (!mso)&(!IE)]><!-->
                                         </div>
                                         <!--<![endif]-->
                                     </div>
@@ -404,7 +342,7 @@
 
 
 
-                    <div class="u-row-container" style="padding: 0px;background-color: transparent">
+                    <div class="u-row-container" style="padding: 0px;background-color: transparent; margin-top: 15px;">
                         <div class="u-row"
                             style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
                             <div
@@ -419,148 +357,6 @@
                                         <!--[if (!mso)&(!IE)]><!-->
                                         <div
                                             style="height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
-                                            <!--<![endif]-->
-
-                                            <table id="u_content_image_2" style="font-family:'Montserrat',sans-serif;"
-                                                role="presentation" cellpadding="0" cellspacing="0" width="100%"
-                                                border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:80px 0px 10px;font-family:'Montserrat',sans-serif;"
-                                                            align="left">
-
-                                                            <table width="100%" cellpadding="0" cellspacing="0"
-                                                                border="0">
-                                                                <tr>
-                                                                    <td style="padding-right: 0px;padding-left: 0px;"
-                                                                        align="center">
-
-                                                                        <img align="center" border="0"
-                                                                            src="images/image-5.png" alt="Logo"
-                                                                            title="Logo"
-                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 20%;max-width: 120px;"
-                                                                            width="120"
-                                                                            class="v-src-width v-src-max-width" />
-
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <table style="font-family:'Montserrat',sans-serif;" role="presentation"
-                                                cellpadding="0" cellspacing="0" width="100%" border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="v-container-padding-padding"
-                                                            style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;"
-                                                            align="left">
-
-                                                            <div align="center">
-                                                                <div style="display: table; max-width:187px;">
-                                                                    <!--[if (mso)|(IE)]><table width="187" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse;" align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:187px;"><tr><![endif]-->
-
-
-                                                                    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 15px;" valign="top"><![endif]-->
-                                                                    <table align="left" border="0" cellspacing="0"
-                                                                        cellpadding="0" width="32" height="32"
-                                                                        style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px">
-                                                                        <tbody>
-                                                                            <tr style="vertical-align: top">
-                                                                                <td align="left" valign="middle"
-                                                                                    style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                                                    <a href="https://facebook.com/"
-                                                                                        title="Facebook"
-                                                                                        target="_blank">
-                                                                                        <img src="images/image-1.png"
-                                                                                            alt="Facebook"
-                                                                                            title="Facebook" width="32"
-                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-                                                                                    </a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <!--[if (mso)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 15px;" valign="top"><![endif]-->
-                                                                    <table align="left" border="0" cellspacing="0"
-                                                                        cellpadding="0" width="32" height="32"
-                                                                        style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px">
-                                                                        <tbody>
-                                                                            <tr style="vertical-align: top">
-                                                                                <td align="left" valign="middle"
-                                                                                    style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                                                    <a href="https://twitter.com/"
-                                                                                        title="Twitter" target="_blank">
-                                                                                        <img src="images/image-2.png"
-                                                                                            alt="Twitter"
-                                                                                            title="Twitter" width="32"
-                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-                                                                                    </a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <!--[if (mso)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 15px;" valign="top"><![endif]-->
-                                                                    <table align="left" border="0" cellspacing="0"
-                                                                        cellpadding="0" width="32" height="32"
-                                                                        style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 15px">
-                                                                        <tbody>
-                                                                            <tr style="vertical-align: top">
-                                                                                <td align="left" valign="middle"
-                                                                                    style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                                                    <a href="https://linkedin.com/"
-                                                                                        title="LinkedIn"
-                                                                                        target="_blank">
-                                                                                        <img src="images/image-6.png"
-                                                                                            alt="LinkedIn"
-                                                                                            title="LinkedIn" width="32"
-                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-                                                                                    </a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <!--[if (mso)|(IE)]></td><![endif]-->
-
-                                                                    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 0px;" valign="top"><![endif]-->
-                                                                    <table align="left" border="0" cellspacing="0"
-                                                                        cellpadding="0" width="32" height="32"
-                                                                        style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
-                                                                        <tbody>
-                                                                            <tr style="vertical-align: top">
-                                                                                <td align="left" valign="middle"
-                                                                                    style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-                                                                                    <a href="https://instagram.com/"
-                                                                                        title="Instagram"
-                                                                                        target="_blank">
-                                                                                        <img src="images/image-3.png"
-                                                                                            alt="Instagram"
-                                                                                            title="Instagram" width="32"
-                                                                                            style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-                                                                                    </a>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <!--[if (mso)|(IE)]></td><![endif]-->
-
-
-                                                                    <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
-                                                                </div>
-                                                            </div>
-
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
 
                                             <table style="font-family:'Montserrat',sans-serif;" role="presentation"
                                                 cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -572,10 +368,11 @@
 
                                                             <div class="v-line-height"
                                                                 style="line-height: 160%; text-align: center; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 160%;">2261
-                                                                    Market Street #4667 San Francisco, CA 94114</p>
-                                                                <p style="font-size: 14px; line-height: 160%;">All
-                                                                    rights reserved.  Company No. 94114</p>
+                                                                <p style="font-size: 14px; line-height: 160%;">Immeuble
+                                                                    Maïko, Voie Djibi, 8ème Tranche Angré, Cocody,
+                                                                    Pharmacie Arum, immeuble maiko</p>
+                                                                <p style="font-size: 14px; line-height: 160%;">Tous
+                                                                    droits reservés</p>
                                                                 <p style="font-size: 14px; line-height: 160%;"> </p>
                                                                 <p style="font-size: 14px; line-height: 160%;">
                                                                     Preferences | Unsubscribe  | View in browser</p>
@@ -609,3 +406,4 @@
 
 
 </html>
+
