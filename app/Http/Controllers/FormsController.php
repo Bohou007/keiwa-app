@@ -41,41 +41,39 @@ class FormsController extends Controller
      */
     public function store(Request $request)
     {
-        try {
-            $form = new Forms();
-            $form->name = $request->name;
-            $form->whatsApp = $request->whatsApp;
-            $form->email = $request->email;
-            $form->location = $request->location;
-            $form->raison_sociale = $request->raison_sociale;
-            $form->situation_geo = $request->situation_geo;
-            $form->activity = $request->activity;
-            $form->staff = $request->staff;
-            $form->registre = $request->registre;
-            $form->dfe = $request->dfe;
-            $form->regime = $request->regime;
-            $form->logiciel = $request->logiciel;
-            $form->cabinet = $request->cabinet;
-            $form->is_required_finance = $request->is_required_finance;
-            $form->montant_finance = $request->montant_finance;
-            $form->balance_due = $request->balance_due;
-            $form->preference = implode(", ", $request->preference);
+        // try {
+        $form = new Forms();
+        $form->name = $request->name;
+        $form->whatsApp = $request->whatsApp;
+        $form->email = $request->email;
+        $form->location = $request->location;
+        $form->raison_sociale = $request->raison_sociale;
+        $form->situation_geo = $request->situation_geo;
+        $form->activity = $request->activity;
+        $form->staff = $request->staff;
+        $form->registre = $request->registre;
+        $form->dfe = $request->dfe;
+        $form->regime = $request->regime;
+        $form->logiciel = $request->logiciel;
+        $form->cabinet = $request->cabinet;
+        $form->is_required_finance = $request->is_required_finance;
+        $form->montant_finance = $request->montant_finance;
+        $form->balance_due = $request->balance_due;
+        $form->preference = implode(", ", $request->preference);
 
-            $form->save();
+        $form->save();
 
-            $users = User::all();
+        $users = User::all();
 
-            if ($users->length > 0) {
-                foreach ($users as $user) {
-                    Mail::to($user->email)->send(new MailNewForm($form));
-                }
+        if ($users->length > 0) {
+            foreach ($users as $user) {
+                Mail::to($user->email)->send(new MailNewForm($form));
             }
-
-
-            return redirect()->route('succesPage');
-        } catch (\Throwable $th) {
-            dump($th);
         }
+        return redirect()->route('succesPage');
+        // } catch (\Throwable $th) {
+        //     dump($th);
+        // }
     }
 
     /**

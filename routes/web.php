@@ -36,6 +36,9 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/register', [RegisterController::class, 'store']);
 });
 
+Route::post('/session', [SessionsController::class, 'store']);
+
+
 Route::get('/health', [HealthCheckController::class, 'index']);
 
 Route::resource('/forms', FormsController::class);
