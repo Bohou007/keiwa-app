@@ -13,13 +13,14 @@ RUN composer install --ignore-platform-req=ext-gd
 
 RUN php artisan key:generate
 
-RUN php artisan optimize && \
+RUN php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache && \
     php artisan config:clear && \
     php artisan route:clear && \
-    php artisan view:clear && \
-    php artisan config:cache && \
-    php artisan route:cache && \
-    php artisan view:cache
+    php artisan view:clear
+
+RUN php artisan optimize
 
 RUN composer dump-autoload -o
 
