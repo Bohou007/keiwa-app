@@ -74,9 +74,8 @@
                 <h6 class="mb-0">{{ __('Information général') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="/user-profile" method="POST" role="form text-left">
+                <form action="/user-profile" method="POST" role="form text-left" enctype="multipart/form-data">
                     @csrf
-
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
