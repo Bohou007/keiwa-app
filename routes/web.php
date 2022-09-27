@@ -51,6 +51,10 @@ Route::get('/success', function () {
     return view('succes');
 })->name('succesPage');
 
+Route::get('/error', function () {
+    return view('error');
+})->name('errorPage');
+
 Route::get('/admin/wps-keiwa-pass-login', function () {
     return view('session/login');
 })->name('login');

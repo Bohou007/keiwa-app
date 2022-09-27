@@ -60,11 +60,8 @@ class FormsController extends Controller
             $form->montant_finance = $request->montant_finance;
             $form->balance_due = $request->balance_due;
             $form->preference = implode(", ", $request->preference);
-
             $form->save();
-
             $users = User::all();
-
             if ($users) {
                 foreach ($users as $user) {
                     Mail::to($user->email)->send(new MailNewForm($form));
@@ -72,7 +69,7 @@ class FormsController extends Controller
             }
             return redirect()->route('succesPage');
         } catch (\Throwable $th) {
-            dump($th);
+            return redirect()->route('errorPage');
         }
     }
 
