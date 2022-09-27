@@ -26,8 +26,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('forms-export', [FormsController::class, 'export'])->name('forms.export');
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
-    Route::get('/mon-compte', [InfoUserController::class, 'create']);
-    Route::post('/user-profile', [InfoUserController::class, 'store']);
+    Route::get('/mon-compte', [InfoUserController::class, 'create'])->name('mon-compte');
+    Route::post('/user-profile', [InfoUserController::class, 'store'])->name('user-profile');
 });
 
 Route::group(['middleware' => 'guest'], function () {
