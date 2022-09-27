@@ -1,6 +1,5 @@
 FROM alpine:edge
-# RUN apk add --no-cache mysql-client
-# ENTRYPOINT ["mysql"]
+FROM erickp/php-pdo:latest
 FROM php:8.0.5
 FROM composer:2.4.1
 
@@ -10,7 +9,7 @@ FROM composer:2.4.1
 # RUN set -ex \
 #     && apk --no-cache add \
 #     postgresql-server-dev=9.5
-RUN docker-php-ext-install pdo
+# RUN docker-php-ext-install pdo
 
 WORKDIR /app
 
