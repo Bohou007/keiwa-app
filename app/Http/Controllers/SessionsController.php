@@ -38,6 +38,6 @@ class SessionsController extends Controller
 
         Auth::logout();
 
-        return redirect('/login')->with(['success' => 'You\'ve been logged out.']);
+        return redirect()->route('login')->with(['success' => 'You\'ve been logged out.']);
     }
 }
